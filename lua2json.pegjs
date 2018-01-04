@@ -1,5 +1,12 @@
-UnitData
-  = __ value:Statement __ {return value}
+// PEG.js grammar to generate parser
+
+TopLevel
+  =  __ head:Statement __
+    tail:(Statement __)*
+    {
+      tail.map(function(ele){Object.assign(head, ele[0])})
+      return head
+    }
 
 Identifier
   = chars:[A-z_]+ {return chars.join("");}
@@ -22,8 +29,6 @@ Value
 Table
   = "{" __ inner:Statement __ "}"
     {return inner}
-//  / "{" __ inner:Statement __ inner2:Statement __"}"
- //   {return Object.assign(inner, inner2)}
   / "{" __ head:Statement __
     tail:(Statement __)* "}"
     {
