@@ -1,0 +1,28 @@
+{
+  "name": "lua2json",
+  "version": "1.0.0",
+  "description": "parse lua tables into json objects",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "pegjs -o parser.js lua2json.pegjs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ratiotile/lua2json.git"
+  },
+  "keywords": [
+    "lua",
+    "json",
+    "parser"
+  ],
+  "author": "ratiotile",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ratiotile/lua2json/issues"
+  },
+  "homepage": "https://github.com/ratiotile/lua2json#readme",
+  "devDependencies": {
+    "pegjs": "^0.10.0"
+  }
+}
