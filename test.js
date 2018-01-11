@@ -48,5 +48,10 @@ alpini_brigade = {
 gurkha_brigade = {
   usable_by = { ENG NEP }
 }
+waffen_brigade = {
+  available_trigger = {
+    # This trigger must be true to build these units. Not currently used. Modders go for it though.
+  }
+}
 `)
 console.log(result)

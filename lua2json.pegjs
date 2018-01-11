@@ -36,6 +36,8 @@ Table
       tail.map(function(ele){Object.assign(head, ele[0])})
       return head
     }
+  / "{" __ "}"
+    {return {}}
 
 ArrayInitializer
   = "{" __ item:Value
