@@ -25,6 +25,7 @@ Value
   = Identifier
   / Table
   / Number
+  / ArrayInitializer
 
 Table
   = "{" __ inner:Statement __ "}"
@@ -36,10 +37,24 @@ Table
       return head
     }
 
+ArrayInitializer
+  = "{" __ item:Value
+    tail:(ArraySeparator __ Value)* __ "}"
+    {
+      var head = [item]
+      tail.map(function(ele){
+        head.push(ele[2])
+      })
+      return head
+    }
+
 /** Basic Definitions **/
 
 // Separator, Space
 Zs = [\u0020\u00A0\u1680\u2000-\u200A\u202F\u205F\u3000]
+
+ArraySeparator
+  = ","
 
 WhiteSpace "whitespace"
   = "\t"
