@@ -39,11 +39,11 @@ Table
 
 ArrayInitializer
   = "{" __ item:Value
-    tail:(ArraySeparator __ Value)* __ "}"
+    tail:(__ Value)* __ "}"
     {
       var head = [item]
       tail.map(function(ele){
-        head.push(ele[2])
+        head.push(ele[1])
       })
       return head
     }
@@ -52,9 +52,6 @@ ArrayInitializer
 
 // Separator, Space
 Zs = [\u0020\u00A0\u1680\u2000-\u200A\u202F\u205F\u3000]
-
-ArraySeparator
-  = ","
 
 WhiteSpace "whitespace"
   = "\t"

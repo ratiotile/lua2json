@@ -45,5 +45,8 @@ fighter_pilot_training = {
 alpini_brigade = {
   usable_by = { ITA }
 }
+gurkha_brigade = {
+  usable_by = { ENG NEP }
+}
 `)
 console.log(result)
