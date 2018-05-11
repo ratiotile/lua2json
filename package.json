@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "node test.js",
-    "build": "pegjs -o parser.js lua2json.pegjs"
+    "build": "pegjs -o parser.js lua2json.pegjs",
+    "convert": "node cli.js"
   },
   "repository": {
     "type": "git",

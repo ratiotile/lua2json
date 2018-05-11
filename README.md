@@ -1,6 +1,7 @@
 # lua2json
 convert lua tables into json
 
+Convert files/directories with: `npm run convert -- file/or/dir/path`
 
 ## Build
 
