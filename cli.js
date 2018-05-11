@@ -40,10 +40,23 @@ function procDir(dir){
 function procFile(filepath){
   const filename = path.basename(filepath)
   const dir = path.dirname(filepath)
+  const ext = path.extname(filepath)
+  if(ext == '.json') return
   console.log("Processing file", filename)
   fs.readFile(filepath, "utf8", function(err, data){
     if(err) throw err;
     const result = parser.parse(data)
-    console.log(result)
+    const outputfile = path.basename(filepath, ext) + ".json"
+    const outputpath = path.join(dir, outputfile)
+    console.log(outputpath)
+    fs.writeFile(outputpath, JSON.stringify(result, 0, 2),
+      {
+        encoding: 'utf8',
+        flag: 'w'
+      },
+      function(err){
+        if(err) throw err;
+        console.log("converted", filename, "to", outputfile)
+    })
   })
 }
